@@ -1,0 +1,42 @@
+      <p class="login-box-msg">Faça login para iniciar sua sessão</p>
+      
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field input-group mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field input-group mb-3">
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Senha" %>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <% if devise_mapping.rememberable? %>
+            <div class="col-8">
+              <div class="icheck-primary">
+                <%# f.check_box :remember_me, type: "checkbox", id: "remember" %>
+                <input type="checkbox" id="remember" name="admin[remember_me]"> 
+                <label for="remember">
+                  Lembrar-me
+                </label>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="actions col-4">
+            <%= f.submit "Entrar", class: "btn btn-primary btn-block" %>
+          </div>
+        </div>
+
+      <% end %>
+
+<%# render "admins/shared/links" %>
