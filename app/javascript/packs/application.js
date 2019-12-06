@@ -18,8 +18,8 @@ require("channels");
 
 import '../../assets/stylesheets/application.scss';
 
-import './jquery';
-import './bootstrap';
+import 'jquery';
+import 'bootstrap';
 import './adminlte-app';
 
 
